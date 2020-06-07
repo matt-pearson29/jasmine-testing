@@ -1,12 +1,12 @@
 image:
-  file: .gitpod.dockerfile
+  file: .gitpod.Dockerfile
+
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 3000
+    onOpen: open-preview
+
+# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
- - init: . ${GITPOD_REPO_ROOT}/.theia/init_tasks.sh    
-vscode:
-  extensions:
-    - ms-python.python@2019.8.30787:TnGEOx35GXMhyKLjDGz9Aw==
-    - formulahendry.auto-close-tag@0.5.6:oZ/8R2VhZEhkHsoeO57hSw==
-    - mkaufman.HTMLHint@0.6.0:TdNYbCmjW8N3yiaPW4/adg==
-    - eventyret.bootstrap-4-cdn-snippet@1.6.0:AtNd6GnbCYVpmUkOaFXs3A==
-    - esbenp.prettier-vscode@4.3.0:jkl8NYpF/GzsahVpjggK0Q==
-    - kevinglasson.cornflakes-linter@0.4.0:Sgfmpf9YWoF5/BDJu2xn0w==
+  - init: echo 'init script' # runs during prebuild
+    command: echo 'start script'
